@@ -1,0 +1,111 @@
+
+    .hero-section {
+        background: url('caminho/para/sua/imagem-de-fundo-saudavel.jpg') no-repeat center center;
+        background-size: cover;
+        height: 60vh; 
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.5); 
+    }
+    .card-produto img {
+        height: 200px;
+        object-fit: cover;
+    }
+
+    #bg-bege {
+        background-color:rgb(190, 136, 64); 
+    }
+
+    /* NOVO CSS PARA POSICIONAR O MENU SANDUÍCHE À DIREITA */
+    .navbar-toggler {
+        margin-left: auto; /* Empurra o botão para a direita */
+        order: 2; /* Coloca o botão após o conteúdo da navbar */
+    }
+
+    .navbar-brand {
+        order: 1; /* Mantém a logo à esquerda */
+    }
+
+    .navbar-collapse {
+        order: 3; /* Mantém o menu após o botão */
+    }
+
+    /* Container flex para reorganizar os elementos */
+    .navbar > .container-fluid {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    @media (max-width: 991.98px) {
+        /* Ajustes para mobile */
+        .navbar-toggler {
+            order: 2;
+            margin-left: auto;
+        }
+
+        .navbar-brand {
+            order: 1;
+        }
+
+        .navbar-collapse {
+            order: 3;
+            flex-basis: 100%;
+            flex-grow: 1;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 75%;
+            max-width: 300px;
+            background-color: #f8f9fa;
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+            padding: 20px;
+            z-index: 1040;
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .navbar-collapse.show {
+            transform: translateX(0);
+        }
+
+        .navbar-nav {
+            flex-direction: column;
+            align-items: flex-start;
+            padding-top: 30px;
+            width: 100%;
+        }
+
+        .navbar-toggler {
+            z-index: 1041;
+            position: relative;
+        }
+
+        /* Botão de fechar personalizado */
+        .navbar-collapse::before {
+            content: '×';
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 2rem;
+            cursor: pointer;
+            z-index: 1042;
+            color: #333;
+        }
+    }
+
+    /* Para telas maiores */
+    @media (min-width: 992px) {
+        .navbar-collapse {
+            order: 2;
+            flex-basis: auto;
+        }
+        
+        .navbar-toggler {
+            display: none;
+        }
+    }
